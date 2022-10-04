@@ -1,0 +1,13 @@
+Ejercicio:
+Implementar un sitio para mostrar resultados de partidos de futbol.
+Cada partido tiene el nombre de dos equipos y el correspondiente resultado.
+(Con el objetivo de simplificar el ejercicio, podemos prescindir de la tabla equipos y manejarlos como cadena de caracteres)
+Implementar una vista para mostrar los resultados, el equipo ganador deberá estar resaltado de alguna manera.
+
+Implementar:
+* Modelos
+* Migrations
+* Vistas
+* Templates
+
+Cargar al menos dos resultados desde el panel de admin y desde la consola de Django.
