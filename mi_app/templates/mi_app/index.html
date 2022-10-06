@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{%  extends "mi_app/base.html" %}
 
-{{  variable1  }}
-<p>
-{{  variable2  }}
+{% block title %} Mostrando lista {%  endblock %}
 
-</body>
-</html>
+{%  block content %}
+    {% for t in tareas %}
+        <p> {{t.titulo}} -
+        {% if t.completa %}
+            COMPLETA
+        {% else %}
+            INCOMPLETA
+        {%  endif %}
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'mi_app/base.html' %}
+
+{% block title %}
+Tus listas de tareas
+{% endblock %}
+
+{% block titulo_pagina %}
+Estas son tus listas
+{% endblock %}
+
+{%  block content %}
+    {% for l in listas_tareas %}
+        <p> <a href="/tareas/lista/{{ l.id }}">  {{l.nombre}}  </a>
+    {% endfor %}
+
+{% endblock %}

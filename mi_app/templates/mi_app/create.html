@@ -1,0 +1,23 @@
+{% extends 'mi_app/base.html' %}
+
+{% block title %}
+Crear una nueva lista de tareas
+{% endblock %}
+
+{% block titulo_pagina %}
+Crea tu nueva lista!
+{% endblock %}
+
+{% block content %}
+	<h3>Crear</h3>
+	<br>
+	<form method="post" class="form-group">
+        {% csrf_token %}
+		<div class="input-group mb-3">
+	  		<div class="input-group-prepend">
+	  		<button name="save" type="submit" class="btn btn-success">Crear</button>
+	  		</div>
+	  		{{form.nombre}}
+		</div>
+	</form>
+{% endblock %}
