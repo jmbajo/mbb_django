@@ -50,9 +50,15 @@
   <!-- Side navigation -->
   <div class="sidenav">
 
-    <a href="/tareas/">Home</a>
-    <a href="/tareas/listas">View</a>
-    <a href="/tareas/crear">Create</a>
+      {% if user.is_authenticated %}
+          <a href="/tareas/">Home</a>
+          <a href="/tareas/listas">View</a>
+          <a href="/tareas/crear">Create</a>
+          <a href="/logout">Logout</a>
+      {% else %}
+          <a href="/login">Login</a>
+      {% endif %}
+
   </div>
 
   <!-- Page content -->

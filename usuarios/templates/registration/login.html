@@ -1,0 +1,20 @@
+{% extends 'mi_app/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block titulo_pagina %}
+Ingrese al sistema
+{% endblock %}
+
+{% block content %}
+	<div class="content-section">
+		<form method="POST" class="form-group">
+			{% csrf_token %}
+			<legend class="border-bottom mb-3">Create an Account</legend>
+			{{ form }}
+			<button name="create", type="submit", class="btn btn-success">Login</button>
+		</form>
+	</div>
+{% endblock %}

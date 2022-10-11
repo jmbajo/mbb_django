@@ -7,7 +7,12 @@ from mi_app.models import ListaDeTareas
 
 
 def home(request):
-    return render(request, 'mi_app/home.html', {})
+    # Queremos mostrar las listas de un determinado usuario (el que está logueado actualmente)
+    listas = request.user.listadetareas_set.all()
+    return render(request, 'mi_app/mostrar_listas.html', {"listas_tareas": listas})
+
+    # return render(request, 'mi_app/home.html', {})
+
 
 def mostrar_lista(request, id):
     lista = ListaDeTareas.objects.get(id=id)
@@ -36,8 +41,20 @@ def crear_tarea(request):
         form = CrearListaForm(request.POST)
 
         if form.is_valid():
-            lista = ListaDeTareas(nombre=form.cleaned_data["nombre"])
-            lista.save()
+            # Variante 1
+            # request.user.listadetareas_set.create(nombre=form.cleaned_data["nombre"])
+
+            # Variante 2
+            # lista = ListaDeTareas(nombre=form.cleaned_data["nombre"], user_id=request.user.id)
+            # lista.save()
+
+            # Variante 3
+            # lista = ListaDeTareas(nombre=form.cleaned_data["nombre"])
+            # lista.save()
+            # request.user.listadetareas_set.add(lista)
+
+
+
 
             return redirect("/tareas")
     else:

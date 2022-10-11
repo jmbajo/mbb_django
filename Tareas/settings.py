@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Rutas definidas por la app django.contrib.auth
 # accounts/login/ [name='login']
 # accounts/logout/ [name='logout']
+
 # accounts/password_change/ [name='password_change']
 # accounts/password_change/done/ [name='password_change_done']
 # accounts/password_reset/ [name='password_reset']
@@ -139,3 +140,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = "/tareas/home"
+LOGOUT_REDIRECT_URL = "/tareas/home"
