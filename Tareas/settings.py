@@ -30,6 +30,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Rutas definidas por la app django.contrib.auth
+# accounts/login/ [name='login']
+# accounts/logout/ [name='logout']
+# accounts/password_change/ [name='password_change']
+# accounts/password_change/done/ [name='password_change_done']
+# accounts/password_reset/ [name='password_reset']
+# accounts/password_reset/done/ [name='password_reset_done']
+# accounts/reset/<uidb64>/<token>/ [name='password_reset_confirm']
+# accounts/reset/done/ [name='password_reset_complete']
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'mi_app.apps.MiAppConfig'
+    'mi_app.apps.MiAppConfig',
+    'usuarios.apps.UsuariosConfig'
 ]
 
 MIDDLEWARE = [
