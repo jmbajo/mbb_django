@@ -6,6 +6,9 @@ from mi_app.forms import CrearListaForm
 from mi_app.models import ListaDeTareas
 
 
+def home(request):
+    return render(request, 'mi_app/home.html', {})
+
 def mostrar_lista(request, id):
     lista = ListaDeTareas.objects.get(id=id)
     tareas = lista.tarea_set.all()
